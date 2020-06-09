@@ -12,19 +12,19 @@ class BaseView: UIView {
 
     override init(frame: CGRect) {
         super.init(frame: frame)
-        self.commomInit()
+        self.commonInit()
     }
 
     required init?(coder: NSCoder) {
         super.init(coder: coder)
-        self.commomInit()
+        self.commonInit()
     }
 
     public convenience init() {
         self.init(frame: .zero)
     }
 
-    open func commomInit() {
+    open func commonInit() {
         self.addSubviews()
         self.layout()
         self.configure()
