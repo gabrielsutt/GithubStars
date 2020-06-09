@@ -1,0 +1,22 @@
+PODS:
+  - Kingfisher (5.14.0):
+    - Kingfisher/Core (= 5.14.0)
+  - Kingfisher/Core (5.14.0)
+  - SteviaLayout (4.7.3)
+
+DEPENDENCIES:
+  - Kingfisher (~> 5.0)
+  - SteviaLayout
+
+SPEC REPOS:
+  trunk:
+    - Kingfisher
+    - SteviaLayout
+
+SPEC CHECKSUMS:
+  Kingfisher: 7b64389a43139c903ec434788344c288217c792d
+  SteviaLayout: c2ecdcff57d44e38fd2f65e54ad52aeae28ca0c4
+
+PODFILE CHECKSUM: dd366151fce3d77cf683d32d86ae15045d63338a
+
+COCOAPODS: 1.8.4
