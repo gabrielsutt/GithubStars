@@ -6,17 +6,16 @@ target 'GithubStars' do
   use_frameworks!
 
   # Pods for GithubStars
- 	pod 'SteviaLayout'
-	pod 'Kingfisher', '~> 5.0'
+  pod 'SteviaLayout'
+  pod 'Kingfisher', '~> 5.0'
 
   target 'GithubStarsTests' do
-    inherit! :search_paths
-    # Pods for testing
 	pod 'Nimble'
+	pod 'Quick'
+	pod 'Nimble-Snapshots'
   end
 
   target 'GithubStarsUITests' do
-    # Pods for testing
   end
 
 end

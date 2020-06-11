@@ -14,14 +14,14 @@ class TableViewCell: BaseTableViewCell {
 
     static let resusableIdentifier = "TableViewCell"
 
-    let numberOfStarsPrefix = "Stars:"
-    let authorPrefix = "Author:"
+    private let numberOfStarsPrefix = "Stars:"
+    private let authorPrefix = "Author:"
 
-    var avatarUrl: URL?
-    let avatarImageView = UIImageView()
-    let repositoryNameLabel = UILabel()
-    let numberOfStarsLabel = UILabel()
-    let authorNameLabel = UILabel()
+    private var avatarUrl: URL?
+    private let avatarImageView = UIImageView()
+    private let repositoryNameLabel = UILabel()
+    private let numberOfStarsLabel = UILabel()
+    private let authorNameLabel = UILabel()
 
     func setup(withAvatarUrl avatarUrl: URL?,
                repositoryName: String,

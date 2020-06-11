@@ -1,22 +1,45 @@
 PODS:
+  - iOSSnapshotTestCase (6.2.0):
+    - iOSSnapshotTestCase/SwiftSupport (= 6.2.0)
+  - iOSSnapshotTestCase/Core (6.2.0)
+  - iOSSnapshotTestCase/SwiftSupport (6.2.0):
+    - iOSSnapshotTestCase/Core
   - Kingfisher (5.14.0):
     - Kingfisher/Core (= 5.14.0)
   - Kingfisher/Core (5.14.0)
+  - Nimble (8.1.1)
+  - Nimble-Snapshots (8.2.1):
+    - Nimble-Snapshots/Core (= 8.2.1)
+  - Nimble-Snapshots/Core (8.2.1):
+    - iOSSnapshotTestCase (~> 6.0)
+    - Nimble (~> 8.0)
+  - Quick (3.0.0)
   - SteviaLayout (4.7.3)
 
 DEPENDENCIES:
   - Kingfisher (~> 5.0)
+  - Nimble
+  - Nimble-Snapshots
+  - Quick
   - SteviaLayout
 
 SPEC REPOS:
   trunk:
+    - iOSSnapshotTestCase
     - Kingfisher
+    - Nimble
+    - Nimble-Snapshots
+    - Quick
     - SteviaLayout
 
 SPEC CHECKSUMS:
+  iOSSnapshotTestCase: 9ab44cb5aa62b84d31847f40680112e15ec579a6
   Kingfisher: 7b64389a43139c903ec434788344c288217c792d
+  Nimble: 5f8a2fb6fa343a7242dfdd9d42f7267419d464b2
+  Nimble-Snapshots: 3a4750d83752625c8ebfdc588da105303ee2201e
+  Quick: 6d9559f40647bc4d510103842ef2fdd882d753e2
   SteviaLayout: c2ecdcff57d44e38fd2f65e54ad52aeae28ca0c4
 
-PODFILE CHECKSUM: dd366151fce3d77cf683d32d86ae15045d63338a
+PODFILE CHECKSUM: d11706e1bd097bfe952d7669876badad3868eff5
 
 COCOAPODS: 1.8.4

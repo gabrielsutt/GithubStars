@@ -6,29 +6,61 @@
 //  Copyright © 2020 Gabriel Souza de Oliveira. All rights reserved.
 //
 
-import XCTest
+import UIKit
+import Nimble_Snapshots
+import Nimble
+import Quick
 @testable import GithubStars
 
-class GithubStarsTests: XCTestCase {
+class GithubStarsTests: QuickSpec {
 
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
+    override func spec() {
 
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
+        var viewModel: MainViewModel?
 
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
+        describe("") {
 
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
+            context("") {
+
+                beforeEach {
+                    let apiMock = API(mockResponse: self.mockResponse())
+                    let service = Service(api: apiMock)
+                    viewModel = MainViewModel(service: service)
+                    viewModel!.fetchData {}
+                }
+
+                it("") {
+                    expect(viewModel!.resultData).toNot(beNil())
+                }
+
+                afterEach {
+                    viewModel = nil
+                }
+            }
         }
     }
 
+    private func mockResponse() -> APIResponse {
+        var response: APIResponse
+
+        if let data = self.getDataFromJson() {
+            response = APIResponse(data: data,
+                                   error: nil,
+                                   urlResponse: HTTPURLResponse(url: URL(string: "google.com")!, statusCode: 200, httpVersion: nil, headerFields: [:]))
+            return response
+        }
+        return APIResponse(data: nil, error: nil, urlResponse: nil)
+    }
+
+    private func getDataFromJson() -> Data? {
+        if let path = Bundle(for: GithubStarsTests.self).path(forResource: "ResultData", ofType: "json") {
+            do {
+                let data = try Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe)
+                return data
+            } catch {
+                return nil
+            }
+        }
+        return nil
+    }
 }

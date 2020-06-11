@@ -12,13 +12,19 @@ class MainViewModel {
 
     let cellIdentifier = TableViewCell.resusableIdentifier
     var resultData: ResultData?
+    private var service: Service
+
+    init(service: Service = Service()) {
+        self.service = service
+    }
 
     func fetchData(_ completion: @escaping (() -> Void)) {
-        Service().fetchData { (resultData, error) in
-            if resultData != nil {
-                self.resultData = resultData
-            } else {
-                print(error?.localizedDescription ?? "")
+        service.fetchData { (result) in
+            switch result {
+            case .success(let data):
+                self.resultData = data
+            case .error(let e):
+                print(e.localizedDescription)
             }
             completion()
         }

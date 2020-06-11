@@ -9,32 +9,32 @@
 import Foundation
 
 class Service {
-    
-    let urlString = "https://api.github.com/search/repositories?q=language:swift&sort=stars"
 
-    func fetchData(completion: @escaping ((ResultData?, Error?) -> Void)) {
-        guard let url = URL(string: urlString) else { return }
+    let api: API?
 
-        let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
+    init(api: API = API()) {
+        self.api = api
+    }
 
-            if let response = response, response.isResponseOK() {
+    func fetchData(callback: @escaping (Result<ResultData>) -> Void) {
+
+        api?.resquest { (apiResponse) in
+            
+            if let response = apiResponse.urlResponse, response.isResponseOK(), let data = apiResponse.data {
                 do {
-                    let resultData = try JSONDecoder().decode(ResultData.self, from: data!)
-                    completion(resultData, nil)
+                    let resultData = try JSONDecoder().decode(ResultData.self, from: data)
+                    callback(.success(resultData))
 
                 } catch {
                     print(error.localizedDescription)
-                    completion(nil, error)
-
+                    callback(.error(error))
                 }
+
             } else {
                 let error = NSError(domain: "unknown", code: -1, userInfo: nil)
-                completion(nil, error)
+                callback(.error(error))
             }
-
         }
-
-        task.resume()
     }
 }
 
