@@ -64,11 +64,11 @@ class TableViewCell: BaseTableViewCell {
 
     override func configure() {
         super.configure()
+        self.selectionStyle = .none
+        self.backgroundColor = .purple
         self.avatarImageView.layer.cornerRadius = 40
         self.avatarImageView.layer.masksToBounds = true
         self.avatarImageView.backgroundColor = .green
-        self.selectionStyle = .none
-        self.backgroundColor = .clear
         self.repositoryNameLabel.font = UIFont.systemFont(ofSize: 20, weight: .bold)
         self.numberOfStarsLabel.font = UIFont.systemFont(ofSize: 12, weight: .semibold)
         self.authorNameLabel.font = UIFont.systemFont(ofSize: 12, weight: .light)

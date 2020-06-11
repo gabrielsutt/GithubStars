@@ -14,6 +14,7 @@ class MainView: BaseView {
     let viewModel = MainViewModel()
 
     private var tableView = UITableView()
+    private var refreshControl = UIRefreshControl()
 
     init() {
         super.init(frame: .zero)
@@ -28,6 +29,10 @@ class MainView: BaseView {
         self.viewModel.fetchData({
             DispatchQueue.main.async {
                 self.tableView.reloadData()
+
+                if self.refreshControl.isRefreshing {
+                    self.refreshControl.endRefreshing()
+                }
             }
         })
     }
@@ -53,6 +58,14 @@ class MainView: BaseView {
                                 forCellReuseIdentifier: self.viewModel.cellIdentifier)
         self.tableView.backgroundColor = .purple
 
+        self.refreshControl.attributedTitle = NSAttributedString(string: "Pull to refresh")
+        self.refreshControl.addTarget(self, action: #selector(self.refresh(_:)), for: .valueChanged)
+        self.tableView.addSubview(refreshControl)
+    }
+
+    @objc
+    private func refresh(_ sender: AnyObject) {
+        self.setup()
     }
 
 }

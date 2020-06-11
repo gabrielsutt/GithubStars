@@ -12,6 +12,7 @@ target 'GithubStars' do
   target 'GithubStarsTests' do
     inherit! :search_paths
     # Pods for testing
+	pod 'Nimble'
   end
 
   target 'GithubStarsUITests' do

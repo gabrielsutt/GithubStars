@@ -17,10 +17,10 @@ class MainViewModel {
         Service().fetchData { (resultData, error) in
             if resultData != nil {
                 self.resultData = resultData
-                completion()
             } else {
                 print(error?.localizedDescription ?? "")
             }
+            completion()
         }
     }
 
