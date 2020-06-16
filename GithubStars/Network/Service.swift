@@ -19,7 +19,7 @@ class Service {
     func fetchData(callback: @escaping (Result<ResultData>) -> Void) {
 
         api?.resquest { (apiResponse) in
-            
+
             if let response = apiResponse.urlResponse, response.isResponseOK(), let data = apiResponse.data {
                 do {
                     let resultData = try JSONDecoder().decode(ResultData.self, from: data)

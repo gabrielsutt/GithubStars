@@ -195,8 +195,8 @@
 		4E2B686B2485E208001C19FF /* GithubStarsTests */ = {
 			isa = PBXGroup;
 			children = (
-				4E35B0BC24929D07006950FE /* ResultData.json */,
 				4E2B686C2485E208001C19FF /* GithubStarsTests.swift */,
+				4E35B0BC24929D07006950FE /* ResultData.json */,
 				4E2B686E2485E208001C19FF /* Info.plist */,
 			);
 			path = GithubStarsTests;

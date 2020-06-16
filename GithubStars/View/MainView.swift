@@ -11,10 +11,11 @@ import Stevia
 
 class MainView: BaseView {
     
-    let viewModel = MainViewModel()
+    var viewModel = MainViewModel()
 
     private var tableView = UITableView()
     private var refreshControl = UIRefreshControl()
+    private var activityIndicator = UIActivityIndicatorView(style: .large)
 
     init() {
         super.init(frame: .zero)
@@ -33,6 +34,7 @@ class MainView: BaseView {
                 if self.refreshControl.isRefreshing {
                     self.refreshControl.endRefreshing()
                 }
+                self.activityIndicator.stopAnimating()
             }
         })
     }
@@ -41,16 +43,22 @@ class MainView: BaseView {
         super.addSubviews()
 
         sv(self.tableView)
+        sv(self.activityIndicator)
     }
 
     override func layout() {
         super.layout()
 
         self.tableView.fillContainer()
+        self.activityIndicator.fillContainer()
+
     }
 
     override func configure() {
         super.configure()
+
+        self.activityIndicator.startAnimating()
+        self.activityIndicator.hidesWhenStopped = true
 
         self.tableView.delegate = self
         self.tableView.dataSource = self

@@ -18,15 +18,19 @@ class GithubStarsTests: QuickSpec {
 
         var viewModel: MainViewModel?
 
-        describe("") {
+        describe("testing main view controller") {
 
-            context("") {
+            beforeEach {
+                let apiMock = API(mockResponse: self.mockResponse())
+                let service = Service(api: apiMock)
+                viewModel = MainViewModel(service: service)
+                viewModel!.fetchData {}
+            }
 
-                beforeEach {
-                    let apiMock = API(mockResponse: self.mockResponse())
-                    let service = Service(api: apiMock)
-                    viewModel = MainViewModel(service: service)
-                    viewModel!.fetchData {}
+            context("getting data") {
+
+                it("result should be loaded successfully") {
+                    expect(viewModel!.resultData).toNot(beNil())
                 }
 
                 it("") {
@@ -35,6 +39,27 @@ class GithubStarsTests: QuickSpec {
 
                 afterEach {
                     viewModel = nil
+                }
+            }
+
+            context("loading") {
+
+                let apiMock = API(mockResponse: self.mockResponse())
+                let service = Service(api: apiMock)
+                viewModel = MainViewModel(service: service)
+                viewModel!.fetchData {}
+
+                let mainView = MainView()
+                mainView.frame = CGRect(origin: .zero, size: CGSize(width: 414, height: 896))
+//                mainView.translatesAutoresizingMaskIntoConstraints = false
+                mainView.viewModel = viewModel!
+
+                beforeEach {
+
+                }
+
+                it("should show tableview") {
+                    expect(mainView) == snapshot()
                 }
             }
         }

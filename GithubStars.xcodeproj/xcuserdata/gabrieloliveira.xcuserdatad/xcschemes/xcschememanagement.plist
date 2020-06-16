@@ -9,6 +9,31 @@
 			<key>orderHint</key>
 			<integer>9</integer>
 		</dict>
+		<key>GithubStarsTests.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+			<key>orderHint</key>
+			<integer>10</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>4E2B68512485E205001C19FF</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>4E2B68672485E208001C19FF</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>4E2B68722485E208001C19FF</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 	</dict>
 </dict>
 </plist>
