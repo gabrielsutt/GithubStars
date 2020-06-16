@@ -10,7 +10,7 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    var mainView = MainView()
+    let mainView = MainView()
 
     override func viewDidLoad() {
         super.viewDidLoad()
