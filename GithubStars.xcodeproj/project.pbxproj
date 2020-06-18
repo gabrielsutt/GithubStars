@@ -15,8 +15,8 @@
 		4E2B685A2485E205001C19FF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E2B68592485E205001C19FF /* ViewController.swift */; };
 		4E2B685F2485E207001C19FF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4E2B685E2485E207001C19FF /* Assets.xcassets */; };
 		4E2B68622485E207001C19FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4E2B68602485E207001C19FF /* LaunchScreen.storyboard */; };
-		4E2B686D2485E208001C19FF /* GithubStarsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E2B686C2485E208001C19FF /* GithubStarsTests.swift */; };
-		4E2B68782485E208001C19FF /* GithubStarsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E2B68772485E208001C19FF /* GithubStarsUITests.swift */; };
+		4E2B686D2485E208001C19FF /* ViewModelSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E2B686C2485E208001C19FF /* ViewModelSpec.swift */; };
+		4E2B68782485E208001C19FF /* ViewControllerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E2B68772485E208001C19FF /* ViewControllerSpec.swift */; };
 		4E2B688B2485E27E001C19FF /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E2B688A2485E27E001C19FF /* MainView.swift */; };
 		4E2B688D2485E284001C19FF /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E2B688C2485E284001C19FF /* MainViewModel.swift */; };
 		4E2B688F2485E28D001C19FF /* ResultData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E2B688E2485E28D001C19FF /* ResultData.swift */; };
@@ -27,6 +27,8 @@
 		4E8F6BA62487261500CAF1E5 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E8F6BA52487261500CAF1E5 /* BaseView.swift */; };
 		4E93BC932485ECB0002CA41A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E93BC922485ECB0002CA41A /* SceneDelegate.swift */; };
 		4E93BC972485EDBD002CA41A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4E93BC962485EDBD002CA41A /* Main.storyboard */; };
+		4ECE8579249B156D00C2D578 /* ViewControllerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ECE8578249B156D00C2D578 /* ViewControllerSpec.swift */; };
+		4ECE857B249B15A700C2D578 /* APIProviderMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ECE857A249B15A700C2D578 /* APIProviderMock.swift */; };
 		BBC7835FDFB1A969430A5CCB /* Pods_GithubStars_GithubStarsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD08E8E4705E65362B5E15B7 /* Pods_GithubStars_GithubStarsUITests.framework */; };
 		D2CDC4EB3BDC382737FF1619 /* Pods_GithubStars.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 007F0C8DEA2FF124AEA5A980 /* Pods_GithubStars.framework */; };
 /* End PBXBuildFile section */
@@ -67,10 +69,10 @@
 		4E2B68612485E207001C19FF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4E2B68632485E207001C19FF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4E2B68682485E208001C19FF /* GithubStarsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GithubStarsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		4E2B686C2485E208001C19FF /* GithubStarsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubStarsTests.swift; sourceTree = "<group>"; };
+		4E2B686C2485E208001C19FF /* ViewModelSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelSpec.swift; sourceTree = "<group>"; };
 		4E2B686E2485E208001C19FF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4E2B68732485E208001C19FF /* GithubStarsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GithubStarsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		4E2B68772485E208001C19FF /* GithubStarsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubStarsUITests.swift; sourceTree = "<group>"; };
+		4E2B68772485E208001C19FF /* ViewControllerSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerSpec.swift; sourceTree = "<group>"; };
 		4E2B68792485E208001C19FF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4E2B688A2485E27E001C19FF /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		4E2B688C2485E284001C19FF /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
@@ -82,6 +84,8 @@
 		4E8F6BA52487261500CAF1E5 /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
 		4E93BC922485ECB0002CA41A /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SceneDelegate.swift; path = GithubStars/SupportingFiles/SceneDelegate.swift; sourceTree = SOURCE_ROOT; };
 		4E93BC962485EDBD002CA41A /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		4ECE8578249B156D00C2D578 /* ViewControllerSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerSpec.swift; sourceTree = "<group>"; };
+		4ECE857A249B15A700C2D578 /* APIProviderMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIProviderMock.swift; sourceTree = "<group>"; };
 		632DF268C0E2FB4A52055B00 /* Pods-GithubStars-GithubStarsUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GithubStars-GithubStarsUITests.release.xcconfig"; path = "Target Support Files/Pods-GithubStars-GithubStarsUITests/Pods-GithubStars-GithubStarsUITests.release.xcconfig"; sourceTree = "<group>"; };
 		74921357D9D5323D5B55CFDD /* Pods-GithubStars-Tests-GithubStarsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GithubStars-Tests-GithubStarsTests.release.xcconfig"; path = "Target Support Files/Pods-GithubStars-Tests-GithubStarsTests/Pods-GithubStars-Tests-GithubStarsTests.release.xcconfig"; sourceTree = "<group>"; };
 		775DE639022E0500F25C0546 /* Pods-GithubStars-Tests-GithubStarsUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GithubStars-Tests-GithubStarsUITests.release.xcconfig"; path = "Target Support Files/Pods-GithubStars-Tests-GithubStarsUITests/Pods-GithubStars-Tests-GithubStarsUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -195,7 +199,9 @@
 		4E2B686B2485E208001C19FF /* GithubStarsTests */ = {
 			isa = PBXGroup;
 			children = (
-				4E2B686C2485E208001C19FF /* GithubStarsTests.swift */,
+				4E2B686C2485E208001C19FF /* ViewModelSpec.swift */,
+				4ECE8578249B156D00C2D578 /* ViewControllerSpec.swift */,
+				4ECE857A249B15A700C2D578 /* APIProviderMock.swift */,
 				4E35B0BC24929D07006950FE /* ResultData.json */,
 				4E2B686E2485E208001C19FF /* Info.plist */,
 			);
@@ -205,7 +211,7 @@
 		4E2B68762485E208001C19FF /* GithubStarsUITests */ = {
 			isa = PBXGroup;
 			children = (
-				4E2B68772485E208001C19FF /* GithubStarsUITests.swift */,
+				4E2B68772485E208001C19FF /* ViewControllerSpec.swift */,
 				4E2B68792485E208001C19FF /* Info.plist */,
 			);
 			path = GithubStarsUITests;
@@ -563,7 +569,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4E2B686D2485E208001C19FF /* GithubStarsTests.swift in Sources */,
+				4ECE857B249B15A700C2D578 /* APIProviderMock.swift in Sources */,
+				4E2B686D2485E208001C19FF /* ViewModelSpec.swift in Sources */,
+				4ECE8579249B156D00C2D578 /* ViewControllerSpec.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -571,7 +579,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4E2B68782485E208001C19FF /* GithubStarsUITests.swift in Sources */,
+				4E2B68782485E208001C19FF /* ViewControllerSpec.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

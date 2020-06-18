@@ -16,6 +16,10 @@ target 'GithubStars' do
   end
 
   target 'GithubStarsUITests' do
+	pod 'Nimble'
+	pod 'Quick'
+	pod 'Nimble-Snapshots'
+	pod 'KIF'
   end
 
 end

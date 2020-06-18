@@ -12,11 +12,15 @@ class ViewController: UIViewController {
 
     let mainView = MainView()
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    init() {
+        super.init(nibName: nil, bundle: nil)
         self.view = self.mainView
-
     }
-    
+
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+        self.view = self.mainView
+    }
+
 }
 
