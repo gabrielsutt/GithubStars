@@ -65,6 +65,9 @@ class MainView: BaseView {
         self.tableView.register(TableViewCell.self,
                                 forCellReuseIdentifier: self.viewModel.cellIdentifier)
         self.tableView.backgroundColor = .purple
+        self.tableView.accessibilityIdentifier = "Repositories informations list"
+        self.tableView.accessibilityLabel = "Repositories informations list"
+        self.tableView.isAccessibilityElement = true
 
         self.refreshControl.attributedTitle = NSAttributedString(string: "Pull to refresh")
         self.refreshControl.addTarget(self, action: #selector(self.refresh(_:)), for: .valueChanged)

@@ -24,7 +24,7 @@ class APIProviderMock {
     }
     
     private static func getDataFromJson() -> Data? {
-        if let path = Bundle(for: GithubStarsTests.self).path(forResource: "ResultData", ofType: "json") {
+        if let path = Bundle(for: APIProviderMock.self).path(forResource: "ResultData", ofType: "json") {
             do {
                 let data = try Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe)
                 return data

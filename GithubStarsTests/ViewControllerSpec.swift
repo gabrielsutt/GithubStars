@@ -6,13 +6,14 @@
 //  Copyright © 2020 Gabriel Souza de Oliveira. All rights reserved.
 //
 
-import UIKit
-import Nimble_Snapshots
-import Nimble
 import Quick
+import Nimble
+import Nimble_Snapshots
+import KIF
+
 @testable import GithubStars
 
-class GithubStarsTests: QuickSpec {
+class ViewControllerSpec: KIFSpec {
 
     override func spec() {
 
@@ -24,12 +25,15 @@ class GithubStarsTests: QuickSpec {
 
             beforeEach {
                 window = UIWindow(frame: CGRect(x: 0, y: 0, width: 414, height: 896))
-                window.makeKeyAndVisible()
 
                 let apiMock = API(mockResponse: APIProviderMock.mockResponse())
                 let service = Service(api: apiMock)
                 viewModel = MainViewModel(service: service)
                 viewModel.fetchData {}
+
+                sut = ViewController()
+                sut.mainView.viewModel = viewModel
+                window.rootViewController = sut
             }
 
             afterEach {
@@ -41,14 +45,16 @@ class GithubStarsTests: QuickSpec {
 
             context("snapshot") {
 
-                beforeEach {
-                    sut = ViewController()
-                    sut.mainView.viewModel = viewModel
-                    window.rootViewController = sut
-                }
-                
                 it("should show populated table view") {
-                    expect(sut) == snapshot("default_state")
+                    window.makeKeyAndVisible()
+                    expect(sut) == recordSnapshot("default_state")
+                }
+
+                it("should show scrolled table view") {
+                    tester().swipeView(withAccessibilityLabel: "Repositories informations list", in: .up)
+                    tester().swipeView(withAccessibilityLabel: "Repositories informations list", in: .up)
+                    tester().swipeView(withAccessibilityLabel: "Repositories informations list", in: .up)
+                    expect(sut) == recordSnapshot("scrolled_state")
                 }
             }
         }

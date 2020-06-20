@@ -13,13 +13,14 @@ target 'GithubStars' do
 	pod 'Nimble'
 	pod 'Quick'
 	pod 'Nimble-Snapshots'
+	pod 'KIF', :configurations => ['Debug']
   end
 
   target 'GithubStarsUITests' do
 	pod 'Nimble'
 	pod 'Quick'
 	pod 'Nimble-Snapshots'
-	pod 'KIF'
+	pod 'KIF', :configurations => ['Debug']
   end
 
 end
