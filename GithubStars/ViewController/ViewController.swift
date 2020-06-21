@@ -10,16 +10,14 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    let mainView = MainView()
-
-    init() {
+    init(mainView: UIView = MainView()) {
         super.init(nibName: nil, bundle: nil)
-        self.view = self.mainView
+        self.view = mainView
     }
 
     required init?(coder: NSCoder) {
         super.init(coder: coder)
-        self.view = self.mainView
+        self.view = MainView()
     }
 
 }

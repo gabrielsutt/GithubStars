@@ -6,7 +6,7 @@
 //  Copyright © 2020 Gabriel Souza de Oliveira. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 class API {
 
@@ -27,5 +27,25 @@ class API {
             let response = APIResponse(data: data, error: error, urlResponse: response)
             callback(response)
         }.resume()
+    }
+
+    func fetchAvatarImage(into imageView: UIImageView,
+                          avatarUrl: URL?) {
+        imageView.kf.indicatorType = .activity
+        imageView.kf.setImage(
+            with: avatarUrl,
+            placeholder: UIImage(named: "placeholderImage"),
+            options: [
+                .scaleFactor(UIScreen.main.scale),
+                .transition(.fade(1)),
+                .cacheOriginalImage ]) { result in
+                    switch result {
+                    case .success(let value):
+                        print("Task done for: \(value.source.url?.absoluteString ?? "")")
+                    case .failure(let error):
+                        print("Job failed: \(error.localizedDescription)")
+                    }
+
+        }
     }
 }

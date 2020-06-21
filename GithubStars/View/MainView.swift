@@ -13,7 +13,7 @@ class MainView: BaseView {
     
     var viewModel = MainViewModel()
 
-    private var tableView = UITableView()
+    var tableView = UITableView()
     private var refreshControl = UIRefreshControl()
     private var activityIndicator = UIActivityIndicatorView(style: .large)
 
@@ -43,7 +43,7 @@ class MainView: BaseView {
         super.addSubviews()
 
         sv(self.tableView)
-        sv(self.activityIndicator)
+//        sv(self.activityIndicator)
     }
 
     override func layout() {
@@ -68,6 +68,8 @@ class MainView: BaseView {
         self.tableView.accessibilityIdentifier = "Repositories informations list"
         self.tableView.accessibilityLabel = "Repositories informations list"
         self.tableView.isAccessibilityElement = true
+        self.tableView.isUserInteractionEnabled = true
+        self.tableView.isPagingEnabled = true
 
         self.refreshControl.attributedTitle = NSAttributedString(string: "Pull to refresh")
         self.refreshControl.addTarget(self, action: #selector(self.refresh(_:)), for: .valueChanged)
@@ -115,7 +117,7 @@ extension MainView: UITableViewDataSource {
 extension MainView: UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-
+        print(123)
     }
 
 }

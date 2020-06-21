@@ -64,7 +64,7 @@ class TableViewCell: BaseTableViewCell {
 
     override func configure() {
         super.configure()
-        self.selectionStyle = .none
+//        self.selectionStyle = .none
         self.backgroundColor = .purple
         self.avatarImageView.layer.cornerRadius = 40
         self.avatarImageView.layer.masksToBounds = true
@@ -73,25 +73,9 @@ class TableViewCell: BaseTableViewCell {
         self.numberOfStarsLabel.font = UIFont.systemFont(ofSize: 12, weight: .semibold)
         self.authorNameLabel.font = UIFont.systemFont(ofSize: 12, weight: .light)
 
-        self.fetchAvatarImage()
-    }
-
-    private func fetchAvatarImage() {
         avatarImageView.kf.indicatorType = .activity
-        avatarImageView.kf.setImage(
-            with: avatarUrl,
-            placeholder: UIImage(named: "placeholderImage"),
-            options: [
-                .scaleFactor(UIScreen.main.scale),
-                .transition(.fade(1)),
-                .cacheOriginalImage ]) { result in
-            switch result {
-            case .success(let value):
-                print("Task done for: \(value.source.url?.absoluteString ?? "")")
-            case .failure(let error):
-                print("Job failed: \(error.localizedDescription)")
-            }
-        }
+        API().fetchAvatarImage(into: avatarImageView, avatarUrl: avatarUrl)
+
     }
 }
 

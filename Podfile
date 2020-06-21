@@ -16,11 +16,4 @@ target 'GithubStars' do
 	pod 'KIF', :configurations => ['Debug']
   end
 
-  target 'GithubStarsUITests' do
-	pod 'Nimble'
-	pod 'Quick'
-	pod 'Nimble-Snapshots'
-	pod 'KIF', :configurations => ['Debug']
-  end
-
 end
