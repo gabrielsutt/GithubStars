@@ -10,9 +10,9 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    init(mainView: UIView = MainView()) {
+    init(with view: UIView = MainView()) {
         super.init(nibName: nil, bundle: nil)
-        self.view = mainView
+        self.view = view
     }
 
     required init?(coder: NSCoder) {

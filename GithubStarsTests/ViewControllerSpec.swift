@@ -35,7 +35,7 @@ class ViewControllerSpec: KIFSpec {
                 mainView = MainView()
                 mainView.viewModel = viewModel
                 mainView.translatesAutoresizingMaskIntoConstraints = false
-                sut = ViewController(mainView: mainView)
+                sut = ViewController(with: mainView)
                 window.rootViewController = sut
             }
 
@@ -48,25 +48,14 @@ class ViewControllerSpec: KIFSpec {
             context("snapshot") {
 
                 it("should show populated table view") {
-//                    window.makeKeyAndVisible()
-                    expect(sut) == recordSnapshot("default_state")
+                    expect(sut) == snapshot("default_state")
                 }
 
                 it("should show scrolled table view") {
-//                    tester().tapRow(at: IndexPath(row: 0,section: 0),
-//                                    inTableViewWithAccessibilityIdentifier: "Repositories informations list")
-//                    tester().waitForCell(at: IndexPath(row: 5, section: 0),
-//                                         inTableViewWithAccessibilityIdentifier: "Repositories informations list")
-
-//                    viewTester().
                     tester().waitForAnimationsToFinish()
-                    tester().tapRow(at: IndexPath(row: 15, section: 0), inTableViewWithAccessibilityIdentifier: "Repositories informations list")
-
-//                    (withAccessibilityLabel: "Repositories informations list", in: .up)
-//                    tester().swipeView(withAccessibilityLabel: "Repositories informations list", in: .up)
-//                    tester().swipeView(withAccessibilityLabel: "Repositories informations list", in: .up)
-//                    window.makeKeyAndVisible()
-                    expect(sut) == recordSnapshot("scrolled_state")
+                    tester().waitForCell(at: IndexPath(row: 5, section: 0),
+                                         inTableViewWithAccessibilityIdentifier: "information list")
+                    expect(sut.view) == snapshot("scrolled_state")
                 }
             }
         }
