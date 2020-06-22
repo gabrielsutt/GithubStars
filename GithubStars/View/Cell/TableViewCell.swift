@@ -64,7 +64,7 @@ class TableViewCell: BaseTableViewCell {
 
     override func configure() {
         super.configure()
-//        self.selectionStyle = .none
+        self.selectionStyle = .none
         self.backgroundColor = .purple
         self.avatarImageView.layer.cornerRadius = 40
         self.avatarImageView.layer.masksToBounds = true

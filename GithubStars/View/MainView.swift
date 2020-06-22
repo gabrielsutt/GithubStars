@@ -114,7 +114,6 @@ extension MainView: UITableViewDataSource {
 extension MainView: UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print(123)
     }
 
 }
